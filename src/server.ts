@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // const io = new Server(server);
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:3000"], // в случае КОРС ошибок вводить сюда тот локалхост на котором развернут фронт
+    origin: "*", // в случае КОРС ошибок вводить сюда тот локалхост на котором развернут фронт
     methods: ["GET", "POST"],
     allowedHeaders: ["*"],
     credentials: true,
