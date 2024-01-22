@@ -40,7 +40,7 @@ io.on("connection", (socket) => {
       socket.join(channelId);
 
       const allMessages = await fetch(
-        `http://localhost:3000/channels/${channelId}/messages`,
+        `http://6fq8v2-3000.csb.app/channels/${channelId}/messages`,
       );
 
       if (allMessages.status === 200) {
@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
     try {
       io.to(channelId).emit("receive_message", msg);
 
-      await fetch(`http://localhost:3000/messages`, {
+      await fetch(`http://6fq8v2-3000.csb.app/messages`, {
         method: "post",
         headers: {
           "content-type": "application/json",
